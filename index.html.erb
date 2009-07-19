@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+  <title>Graph database</title>
+
+  <link href="ext/style.css" rel="stylesheet">
+  <script type="text/javascript" src="ext/tablefilter.js"></script>
+  <script type="text/javascript" src="ext/sorttable.js"></script>
+  <script type="text/javascript" src="ext/querystring.js"></script>
+
+  <script type="text/javascript">
+    function querystringFilter() {
+      var columns = ['name', 'n', 'm', 'degrees'];
+      var querystring = new Querystring();
+      for (var i = 0; i < columns.length; i++) {
+        if (value = querystring.get(columns[i])) {
+          tf_graphdb.SetFilterValue(i, value);
+        }
+      }
+      tf_graphdb.Filter();
+    };
+
+    var graphdb_config = {
+      on_keyup : true, filters_row_index : 1, col_4 : 'none',
+      on_filters_loaded : querystringFilter,
+    };
+  </script>
+</head>
+
+<div id="container">
+  <h1>Graph database</h1>
+
+  <table id="graphdb" class="filterable sortable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th><i>n</i></th>
+        <th><i>m</i></th>
+        <th>Vertex degrees</th>
+        <th class="sorttable_nosort">Graph</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% GRAPHS.each do |g| %>
+      <tr>
+        <td sorttable_customkey="<%= g[:name][1..-1] %>">
+          <a href="<%= g[:name] %>.html"><%= g[:name] %></a>
+        </td>
+        <td><%= g[:n] %></td>
+        <td><%= g[:m] %></td>
+        <td>(<%= g[:degrees].join(', ') %>)</td>
+        <td>
+          <a href="<%= g[:name] %>.html">
+            <img src="image/small/<%= g[:name] %>.png" alt=""
+                 height="25">
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

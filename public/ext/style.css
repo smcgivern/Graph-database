@@ -1,0 +1,52 @@
+#flt0_graphdb { width : 5em; }
+#flt3_graphdb { width : 13em; }
+#flt1_graphdb, #flt2_graphdb { width : 2em; }
+
+body, h1, thead, #image, #image-link, #backlink {
+  text-align : center;
+}
+
+#container {
+  margin : 0 auto;
+  width : 30em;
+  text-align : left;
+}
+
+table { border-collapse : collapse; }
+
+th, td {
+  padding : 0.5em;
+  border-top : 1px solid black;
+}
+
+#image {
+  width : 400px;
+  height : 400px;
+  clear : both;
+  border : 1px solid black;
+  margin : 0 auto;
+}
+
+a img { border : none; }
+
+dl {
+  width : 22em;
+  margin : 1em auto;
+  padding : 0;
+}
+
+dt {
+  width : 10em;
+  float : left;
+  text-align : right;
+  clear : both;
+  margin : 0;
+  padding : 0.5em;
+}
+
+dd {
+  width : 10em;
+  float : left;
+  margin : 0;
+  padding : 0.5em;
+}

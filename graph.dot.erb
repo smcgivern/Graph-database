@@ -1,0 +1,10 @@
+graph <%= g[:name] %> {
+    graph [splines=false];
+    node [label="\N", shape=point, fontsize=30];
+
+    <% g[:nodes].each do |n, p| %><%= n %> [pos="<%= p %>"];
+    <% end %>
+
+    <% g[:edges].each do |e, f| %><%= e %> -- <%= f %>;
+    <% end %>
+}

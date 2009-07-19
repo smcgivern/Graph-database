@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+  <title><%= g[:name] %></title
+  <link href="ext/style.css" rel="stylesheet">
+</head>
+
+<div id="container">
+  <h1><%= g[:name] %></h1>
+
+  <p id="backlink"><a href="./">Back to the graph database</a></p>
+
+  <dl>
+    <dt><i>n</i></dt>
+    <dd><a href="./?n=<%= g[:n] %>"><%= g[:n] %></a></dd>
+    <dt><i>m</i></dt>
+    <dd><a href="./?m=<%= g[:n] %>"><%= g[:m] %></a></dd>
+    <dt>Vertex degrees</dt>
+    <dd>
+      <a href="./?degrees=(<%= g[:degrees].join(',+') %>)">
+        (<%= g[:degrees].join(', ') %>)
+      </a>
+    </dd>
+  </dl>
+
+  <div id="image">
+    <object data="image/<%= g[:name] %>.svg" type="image/svg+xml"
+            width="400" height="400">
+      <img src="image/<%= g[:name] %>.png" alt="" height="400">
+    </object>
+  </div>
+
+  <p id="image-link">
+    <a href="image/<%= g[:name] %>.svg">SVG for <%= g[:name] %></a>
+  </p>
+</div>
