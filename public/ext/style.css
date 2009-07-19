@@ -1,8 +1,8 @@
 #flt0_graphdb { width : 5em; }
 #flt3_graphdb { width : 13em; }
-#flt1_graphdb, #flt2_graphdb { width : 2em; }
+#flt1_graphdb, #flt2_graphdb { width : 2.5em; }
 
-body, h1, thead, #image, #image-link, #backlink {
+body, h1, thead, #image, #imagelink, #backlink {
   text-align : center;
 }
 

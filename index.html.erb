@@ -2,32 +2,17 @@
 <head>
   <title>Graph database</title>
 
-  <link href="ext/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="ext/style.css">
   <script type="text/javascript" src="ext/tablefilter.js"></script>
   <script type="text/javascript" src="ext/sorttable.js"></script>
   <script type="text/javascript" src="ext/querystring.js"></script>
-
-  <script type="text/javascript">
-    function querystringFilter() {
-      var columns = ['name', 'n', 'm', 'degrees'];
-      var querystring = new Querystring();
-      for (var i = 0; i < columns.length; i++) {
-        if (value = querystring.get(columns[i])) {
-          tf_graphdb.SetFilterValue(i, value);
-        }
-      }
-      tf_graphdb.Filter();
-    };
-
-    var graphdb_config = {
-      on_keyup : true, filters_row_index : 1, col_4 : 'none',
-      on_filters_loaded : querystringFilter,
-    };
-  </script>
+  <script type="text/javascript" src="ext/config.js"></script>
 </head>
 
 <div id="container">
   <h1>Graph database</h1>
+
+  <p id="backlink"><a href="index-l.html">Light version</a></p>
 
   <table id="graphdb" class="filterable sortable">
     <thead>

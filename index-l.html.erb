@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+  <title>Graph database</title>
+
+  <link href="ext/style.css" rel="stylesheet">
+</head>
+
+<div id="container">
+  <h1>Graph database</h1>
+
+  <p id="backlink"><a href="./">Normal version</a></p>
+
+  <table id="graphdb">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th><i>n</i></th>
+        <th><i>m</i></th>
+        <th>Vertex degrees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% GRAPHS.each do |g| %>
+      <tr>
+        <td>
+          <a href="<%= g[:name] %>-l.html"><%= g[:name] %></a>
+        </td>
+        <td><%= g[:n] %></td>
+        <td><%= g[:m] %></td>
+        <td>(<%= g[:degrees].join(', ') %>)</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
