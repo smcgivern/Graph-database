@@ -12,6 +12,8 @@ body, h1, thead, #image, #image-link, #backlink {
   text-align : left;
 }
 
+table, #image { margin : 0 auto; }
+
 table { border-collapse : collapse; }
 
 th, td {
@@ -24,7 +26,6 @@ th, td {
   height : 400px;
   clear : both;
   border : 1px solid black;
-  margin : 0 auto;
 }
 
 a img { border : none; }
