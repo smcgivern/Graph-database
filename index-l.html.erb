@@ -1,8 +1,12 @@
 <!doctype html>
 <head>
   <title>Graph database</title>
-
   <link href="ext/style.css" rel="stylesheet">
+
+  <script type="text/javascript" src="ext/tablefilter.js"></script>
+  <script type="text/javascript" src="ext/sorttable.js"></script>
+  <script type="text/javascript" src="ext/querystring.js"></script>
+  <script type="text/javascript" src="ext/config.js"></script>
 </head>
 
 <div id="container">
@@ -10,7 +14,7 @@
 
   <p id="backlink"><a href="./">Normal version</a></p>
 
-  <table id="graphdb">
+  <table id="graphdb" class="filterable sortable">
     <thead>
       <tr>
         <th>Name</th>
@@ -22,7 +26,7 @@
     <tbody>
       <% GRAPHS.each do |g| %>
       <tr>
-        <td>
+        <td sorttable_customkey="<%= g[:name][1..-1] %>">
           <a href="<%= g[:name] %>-l.html"><%= g[:name] %></a>
         </td>
         <td><%= g[:n] %></td>

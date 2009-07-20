@@ -2,6 +2,19 @@ var columns = ['name', 'n', 'm', 'degrees'];
 var e = encodeURIComponent;
 
 function addQuerystringBuilder() {
+  if (!document.getElementById('flt4_graphdb')) {
+    var hiddenInput = document.createElement('input');
+    var newCell = document.createElement('td');
+
+    hiddenInput.id = 'flt4_graphdb';
+    hiddenInput.type = 'hidden';
+    newCell.colSpan = '4';
+    newCell.appendChild(hiddenInput);
+
+    document.getElementsByTagName('thead')[0].
+      appendChild(document.createElement('tr').appendChild(newCell));
+  }
+
   var builderLink = document.createElement('a');
 
   builderLink.id = 'builderlink';
@@ -23,7 +36,7 @@ function buildQuerystring() {
   }
 
   document.getElementById('builderlink').
-    href = './?' + params.join('&');
+    href = location.href + '?' + params.join('&');
 }
 
 function querystringFilter() {
@@ -44,5 +57,5 @@ function querystringFilter() {
 var graphdb_config = {
   on_keyup : true, filters_row_index : 1, col_4 : 'none',
   on_filters_loaded : querystringFilter,
-  on_before_filter : buildQuerystring,
+  on_before_filter : buildQuerystring
 };

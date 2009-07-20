@@ -11,12 +11,14 @@
 
   <dl>
     <dt><i>n</i></dt>
-    <dd><%= g[:n] %></dd>
+    <dd><a href="index-l.html?n=%3D<%= g[:n] %>"><%= g[:n] %></a></dd>
     <dt><i>m</i></dt>
-    <dd><%= g[:m] %></dd>
+    <dd><a href="index-l.html?m=%3D<%= g[:n] %>"><%= g[:m] %></a></dd>
     <dt>Vertex degrees</dt>
     <dd>
-      (<%= g[:degrees].join(', ') %>)
+      <a href="index-l.html?degrees=(<%= g[:degrees].join('%2C%20') %>)">
+        (<%= g[:degrees].join(', ') %>)
+      </a>
     </dd>
   </dl>
 
