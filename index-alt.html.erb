@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
   <title>Graph database</title>
-  <link href="ext/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="ext/style.css">
 
   <script type="text/javascript" src="ext/tablefilter.js"></script>
   <script type="text/javascript" src="ext/sorttable.js"></script>
@@ -21,17 +21,24 @@
         <th><i>n</i></th>
         <th><i>m</i></th>
         <th>Vertex degrees</th>
+        <th class="sorttable_nosort">Graph</th>
       </tr>
     </thead>
     <tbody>
       <% GRAPHS.each do |g| %>
       <tr>
         <td sorttable_customkey="<%= g[:name][1..-1] %>">
-          <a href="<%= g[:name] %>-l.html"><%= g[:name] %></a>
+          <a href="<%= g[:name] %>-t.html"><%= g[:name] %></a>
         </td>
         <td><%= g[:n] %></td>
         <td><%= g[:m] %></td>
         <td>(<%= g[:degrees].join(', ') %>)</td>
+        <td>
+          <a href="<%= g[:name] %>.html">
+            <img src="image/small/<%= g[:name] %>.png" alt=""
+                 height="25">
+          </a>
+        </td>
       </tr>
       <% end %>
     </tbody>

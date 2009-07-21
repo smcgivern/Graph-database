@@ -26,11 +26,11 @@ GRAPHS = load('database.gdb')
 GRAPHVIZ = create_template('graph.dot.erb')
 INDEX = create_template('index.html.erb')
 GRAPH_PAGE = create_template('graph.html.erb')
-INDEX_L = create_template('index-l.html.erb')
-GRAPH_PAGE_L = create_template('graph-l.html.erb')
+INDEX_ALT = create_template('index-alt.html.erb')
+GRAPH_PAGE_ALT = create_template('graph-alt.html.erb')
 
 open('public/index.html', 'w').puts(INDEX.result)
-open('public/index-l.html', 'w').puts(INDEX_L.result)
+open('public/index-t.html', 'w').puts(INDEX_ALT.result)
 
 GRAPHS.each do |graph|
   g = graph
@@ -41,6 +41,6 @@ GRAPHS.each do |graph|
   open("public/#{g[:name]}.html", 'w').
     puts(GRAPH_PAGE.result(binding))
 
-  open("public/#{g[:name]}-l.html", 'w').
-    puts(GRAPH_PAGE_L.result(binding))
+  open("public/#{g[:name]}-t.html", 'w').
+    puts(GRAPH_PAGE_ALT.result(binding))
 end

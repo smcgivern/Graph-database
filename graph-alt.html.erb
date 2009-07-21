@@ -7,16 +7,16 @@
 <div id="container">
   <h1><%= g[:name] %></h1>
 
-  <p id="backlink"><a href="index-l.html">Back to the graph database</a></p>
+  <p id="backlink"><a href="index-t.html">Back to the graph database</a></p>
 
   <dl>
     <dt><i>n</i></dt>
-    <dd><a href="index-l.html?n=%3D<%= g[:n] %>"><%= g[:n] %></a></dd>
+    <dd><a href="index-t.html?n=%3D<%= g[:n] %>"><%= g[:n] %></a></dd>
     <dt><i>m</i></dt>
-    <dd><a href="index-l.html?m=%3D<%= g[:n] %>"><%= g[:m] %></a></dd>
+    <dd><a href="index-t.html?m=%3D<%= g[:m] %>"><%= g[:m] %></a></dd>
     <dt>Vertex degrees</dt>
     <dd>
-      <a href="index-l.html?degrees=(<%= g[:degrees].join('%2C%20') %>)">
+      <a href="index-t.html?degrees=(<%= g[:degrees].join('%2C%20') %>)">
         (<%= g[:degrees].join(', ') %>)
       </a>
     </dd>

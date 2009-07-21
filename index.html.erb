@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
   <title>Graph database</title>
-  <link rel="stylesheet" href="ext/style.css">
+  <link href="ext/style.css" rel="stylesheet">
 
   <script type="text/javascript" src="ext/tablefilter.js"></script>
   <script type="text/javascript" src="ext/sorttable.js"></script>
@@ -12,7 +12,7 @@
 <div id="container">
   <h1>Graph database</h1>
 
-  <p id="backlink"><a href="index-l.html">Light version</a></p>
+  <p id="backlink"><a href="index-t.html">Thumbnail version</a></p>
 
   <table id="graphdb" class="filterable sortable">
     <thead>
@@ -21,7 +21,6 @@
         <th><i>n</i></th>
         <th><i>m</i></th>
         <th>Vertex degrees</th>
-        <th class="sorttable_nosort">Graph</th>
       </tr>
     </thead>
     <tbody>
@@ -33,12 +32,6 @@
         <td><%= g[:n] %></td>
         <td><%= g[:m] %></td>
         <td>(<%= g[:degrees].join(', ') %>)</td>
-        <td>
-          <a href="<%= g[:name] %>.html">
-            <img src="image/small/<%= g[:name] %>.png" alt=""
-                 height="25">
-          </a>
-        </td>
       </tr>
       <% end %>
     </tbody>

@@ -27,6 +27,7 @@ function addQuerystringBuilder() {
 
 function buildQuerystring() {
   var params = [];
+  var base = location.href.split('?')[0];
 
   for (var i = 0; i < columns.length; i++) {
     var input = document.getElementById('flt' + i + '_graphdb');
@@ -36,7 +37,7 @@ function buildQuerystring() {
   }
 
   document.getElementById('builderlink').
-    href = location.href + '?' + params.join('&');
+    href = base + '?' + params.join('&');
 }
 
 function querystringFilter() {
