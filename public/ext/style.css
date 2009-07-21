@@ -4,7 +4,10 @@
 
 body, h1, thead, #image, #imagelink, #backlink {
   text-align : center;
+  font-family : sans-serif;
 }
+
+body { font-size : 105%; }
 
 #container {
   margin : 0 auto;
