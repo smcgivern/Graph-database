@@ -9,7 +9,7 @@ convert $DIR/small/*.png -append $DIR/sprites.png
 rm $CSS
 
 echo ".graph-sprite {" >> $CSS
-echo "  background : url('image/sprites.png') no-repeat top left;" >> $CSS
+echo "  background : url('../image/sprites.png') no-repeat top left;" >> $CSS
 echo "  display : inline-block;" >> $CSS
 echo "}" >> $CSS
 echo "" >> $CSS
