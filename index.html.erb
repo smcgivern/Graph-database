@@ -3,6 +3,7 @@
   <title>Graph database</title>
   <link href="/ext/global.css" rel="stylesheet">
   <link href="ext/style.css" rel="stylesheet">
+  <link href="ext/graph-sprite.css" rel="stylesheet">
 
   <script type="text/javascript" src="ext/tablefilter.js"></script>
   <script type="text/javascript" src="ext/sorttable.js"></script>
@@ -20,6 +21,7 @@
         <th><i>n</i></th>
         <th><i>m</i></th>
         <th>Vertex degrees</th>
+        <th class="sorttable_nosort">Graph</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +33,9 @@
         <td><%= g[:n] %></td>
         <td><%= g[:m] %></td>
         <td>(<%= g[:degrees].join(', ') %>)</td>
+        <td>
+          <span class="graph-sprite" id="<%= g[:name] %>"></span>
+        </td>
       </tr>
       <% end %>
     </tbody>

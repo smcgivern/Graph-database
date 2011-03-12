@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Based on https://gist.github.com/342399
+
+DIR=public/image
+CSS=public/ext/graph-sprites.css
+
+convert $DIR/small/*.png -append $DIR/sprites.png
+rm $CSS
+
+echo ".graph-sprite {" >> $CSS
+echo "  background : url('image/sprites.png') no-repeat top left;" >> $CSS
+echo "  display : inline-block;" >> $CSS
+echo "}" >> $CSS
+echo "" >> $CSS
+
+offset=0
+
+for file in $DIR/small/*.png
+do
+  width=`identify -format "%[fx:w]" "$file"`
+  height=`identify -format "%[fx:h]" "$file"`
+  idname=`basename "$file" .png`
+
+  echo ".graph-sprite#$idname {" >> $CSS
+  echo "  background-position : 0 -${offset}px;" >> $CSS
+  echo "  width : ${width}px;" >> $CSS
+  echo "  height : ${height}px;" >> $CSS
+  echo "}" >> $CSS
+  echo "" >> $CSS
+
+  let offset+=$height
+done
+
+rm -r public/image/small
