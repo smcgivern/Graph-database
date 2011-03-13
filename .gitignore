@@ -1,0 +1,5 @@
+deploy
+dot/*.dot
+public/*.html
+public/ext/graph-sprites.css
+public/image/
