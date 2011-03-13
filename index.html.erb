@@ -34,7 +34,7 @@
         <td><%= g[:m] %></td>
         <td>(<%= g[:degrees].join(', ') %>)</td>
         <td>
-          <span class="graph-sprite" id="<%= g[:name] %>"></span>
+          <a class="graph-sprite" id="<%= g[:name] %>" href="<%= g[:name] %>.html"></a>
         </td>
       </tr>
       <% end %>
