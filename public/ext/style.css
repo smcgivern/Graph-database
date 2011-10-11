@@ -2,7 +2,7 @@
 #flt3_graphdb { width : 13em; }
 #flt1_graphdb, #flt2_graphdb { width : 2.5em; }
 
-body, thead, #image, #imagelink, #backlink {
+thead, #image, #imagelink, #backlink {
     text-align : center;
 }
 
