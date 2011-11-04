@@ -26,7 +26,7 @@ def create_template(filename); ERB.new(open(filename).read); end
 
 GRAPHS = load('database.gdb')
 GRAPHVIZ = create_template('graph.dot.erb')
-README = Maruku.new(open('README').read).to_html
+README = Maruku.new(open('README.md').read).to_html
 INDEX = create_template('index.html.erb')
 ABOUT = create_template('about.html.erb')
 GRAPH_PAGE = create_template('graph.html.erb')
